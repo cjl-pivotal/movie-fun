@@ -40,7 +40,11 @@ public class ActionServlet extends HttpServlet {
     public static int PAGE_SIZE = 5;
 
     @Autowired
-    private MoviesBean moviesBean;
+    private final MoviesBean moviesBean;
+
+    public ActionServlet(MoviesBean moviesBean) {
+        this.moviesBean = moviesBean;
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
